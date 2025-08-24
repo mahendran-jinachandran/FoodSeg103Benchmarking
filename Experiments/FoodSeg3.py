@@ -135,7 +135,6 @@ def evaluate_deeplab(model, val_loader, num_classes=104, visualize=True):
             outputs = model(images)['out']
             preds = torch.argmax(outputs, dim=1)
 
-            # Flatten for confusion matrix (accuracy)
             preds_flat = preds.view(-1).cpu().numpy()
             labels_flat = labels.view(-1).cpu().numpy()
             mask = labels_flat != 255
@@ -146,7 +145,6 @@ def evaluate_deeplab(model, val_loader, num_classes=104, visualize=True):
             for p, t in zip(preds_flat, labels_flat):
                 conf_matrix[t, p] += 1
 
-            # mIoU using torchmetrics (requires torch tensors)
             iou = compute_iou(preds, labels)
             total_iou += iou
             count += 1
@@ -157,9 +155,6 @@ def evaluate_deeplab(model, val_loader, num_classes=104, visualize=True):
 
     # Compute pixel accuracy
     pixel_acc = np.diag(conf_matrix).sum() / conf_matrix.sum()
-
-    # Compute mIoU using Jaccard Index
-
     miou = total_iou / count
     print(f"Validation mIoU: {miou:.4f}")
     print(f"Validation Pixel Accuracy: {pixel_acc:.4f}")
@@ -215,14 +210,12 @@ def evaluate_unet(model, val_loader, num_classes=104, visualize=True):
             outputs = model(images)
             preds = torch.argmax(outputs, dim=1)
 
-            # Flatten for confusion matrix (accuracy)
             preds_flat = preds.view(-1).cpu().numpy()
             labels_flat = labels.view(-1).cpu().numpy()
             mask = labels_flat != 255
             preds_flat = preds_flat[mask]
             labels_flat = labels_flat[mask]
 
-            # Accuracy calculation using confusion matrix
             for p, t in zip(preds_flat, labels_flat):
                 conf_matrix[t, p] += 1
 
@@ -235,9 +228,6 @@ def evaluate_unet(model, val_loader, num_classes=104, visualize=True):
 
     # Compute pixel accuracy
     pixel_acc = np.diag(conf_matrix).sum() / conf_matrix.sum()
-
-    # Compute mIoU using Jaccard Index
-
     miou = total_iou / count
     print(f"Validation mIoU: {miou:.4f}")
     print(f"Validation Pixel Accuracy: {pixel_acc:.4f}")
@@ -299,14 +289,12 @@ def evaluate_segformer(model, val_loader, num_classes=104, visualize=True):
             outputs = F.interpolate(outputs, size=labels.shape[1:], mode="bilinear", align_corners=False)
             preds = torch.argmax(outputs, dim=1)
 
-            # Flatten for confusion matrix (accuracy)
             preds_flat = preds.view(-1).cpu().numpy()
             labels_flat = labels.view(-1).cpu().numpy()
             mask = labels_flat != 255
             preds_flat = preds_flat[mask]
             labels_flat = labels_flat[mask]
 
-            # Accuracy calculation using confusion matrix
             for p, t in zip(preds_flat, labels_flat):
                 conf_matrix[t, p] += 1
 
@@ -321,7 +309,6 @@ def evaluate_segformer(model, val_loader, num_classes=104, visualize=True):
 
     # Compute pixel accuracy
     pixel_acc = np.diag(conf_matrix).sum() / conf_matrix.sum()
-
     miou = total_iou / count
     print(f"Validation mIoU: {miou:.4f}")
     print(f"Validation Pixel Accuracy: {pixel_acc:.4f}")

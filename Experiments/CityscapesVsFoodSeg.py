@@ -7,13 +7,11 @@ from tqdm import tqdm
 import torch.nn as nn
 from PIL import Image
 from torch import optim
-import albumentations as A
 import torch.nn.functional as F
 import matplotlib.pyplot as plt
 from torch.utils.data import Dataset
 from torchvision import transforms as T
 import segmentation_models_pytorch as smp
-from albumentations.pytorch import ToTensorV2
 from transformers import SegformerForSemanticSegmentation
 from torchmetrics.classification import MulticlassJaccardIndex
 from torchvision.models.segmentation import deeplabv3_resnet101, DeepLabV3_ResNet101_Weights
@@ -53,8 +51,6 @@ class CityscapesDataset(Dataset):
         if self.target_transform:
             label = self.target_transform(label)
         return img, label.squeeze(0) if label.dim() == 3 else label
-
-
     
 def compute_iou(preds, labels, num_classes=19, ignore_index=255):
     iou_metric = MulticlassJaccardIndex(num_classes=num_classes, ignore_index=ignore_index).to('cpu')
@@ -184,7 +180,6 @@ def evaluate_deeplab(model, val_loader, num_classes=19, visualize=True):
             outputs = model(images)['out']
             preds = torch.argmax(outputs, dim=1)
 
-            # Flatten for confusion matrix (accuracy)
             preds_flat = preds.view(-1).cpu().numpy()
             labels_flat = labels.view(-1).cpu().numpy()
             mask = labels_flat != 255
@@ -195,7 +190,6 @@ def evaluate_deeplab(model, val_loader, num_classes=19, visualize=True):
             for p, t in zip(preds_flat, labels_flat):
                 conf_matrix[t, p] += 1
 
-            # mIoU using torchmetrics (requires torch tensors)
             iou = compute_iou(preds, labels)
             total_iou += iou
             count += 1
@@ -206,9 +200,6 @@ def evaluate_deeplab(model, val_loader, num_classes=19, visualize=True):
 
     # Compute pixel accuracy
     pixel_acc = np.diag(conf_matrix).sum() / conf_matrix.sum()
-
-    # Compute mIoU using Jaccard Index
-
     miou = total_iou / count
     print(f"Validation mIoU: {miou:.4f}")
     print(f"Validation Pixel Accuracy: {pixel_acc:.4f}")
@@ -276,7 +267,6 @@ def evaluate_unet(model, val_loader, num_classes=19, visualize=True):
             outputs = model(images)
             preds = torch.argmax(outputs, dim=1)
 
-            # Flatten for confusion matrix (accuracy)
             preds_flat = preds.view(-1).cpu().numpy()
             labels_flat = labels.view(-1).cpu().numpy()
             mask = labels_flat != 255
@@ -296,9 +286,6 @@ def evaluate_unet(model, val_loader, num_classes=19, visualize=True):
 
     # Compute pixel accuracy
     pixel_acc = np.diag(conf_matrix).sum() / conf_matrix.sum()
-
-    # Compute mIoU using Jaccard Index
-
     miou = total_iou / count
     print(f"Validation mIoU: {miou:.4f}")
     print(f"Validation Pixel Accuracy: {pixel_acc:.4f}")
@@ -324,7 +311,6 @@ def train_segformer(num_epochs, model, optimizer, train_loader, scheduler, freez
                             desc=f"Epoch: {epoch + 1} / {num_epochs}",
                             unit="batch")
 
-        # Show current learning rate
         current_lr = scheduler.get_last_lr()[0]
         print(f"Current Learning Rate: {current_lr:.8f}")
 
@@ -355,9 +341,8 @@ def train_segformer(num_epochs, model, optimizer, train_loader, scheduler, freez
             running_loss += loss.item()
             progress_bar.set_postfix(avg_loss=running_loss / i)
         
-        # Step scheduler
-        scheduler.step()
 
+        scheduler.step()
         avg = running_loss / len(train_loader)
         loss_history.append(avg)
 
@@ -388,7 +373,6 @@ def evaluate_segformer(model, val_loader, num_classes=19, visualize=True):
             outputs = F.interpolate(outputs, size=labels.shape[1:], mode="bilinear", align_corners=False)
             preds = torch.argmax(outputs, dim=1)
 
-            # Flatten for confusion matrix (accuracy)
             preds_flat = preds.view(-1).cpu().numpy()
             labels_flat = labels.view(-1).cpu().numpy()
             mask = labels_flat != 255
@@ -410,7 +394,6 @@ def evaluate_segformer(model, val_loader, num_classes=19, visualize=True):
 
     # Compute pixel accuracy
     pixel_acc = np.diag(conf_matrix).sum() / conf_matrix.sum()
-
     miou = total_iou / count
     print(f"Validation mIoU: {miou:.4f}")
     print(f"Validation Pixel Accuracy: {pixel_acc:.4f}")
@@ -538,9 +521,7 @@ if __name__ == "__main__":
     deeplab_model.classifier[4] = nn.Conv2d(256, NUM_CLASSES, kernel_size=1)
     deeplab_model = deeplab_model.to(DEVICE)
 
-    criterion = nn.CrossEntropyLoss(ignore_index=255)
     optimizer = create_optimizer(deeplab_model)
-
     base_lr = 6e-5
     warmup_epochs = 5
     scheduler = WarmupPolyLR(optimizer, warmup_epochs, EPOCHS, base_lr)
@@ -595,9 +576,7 @@ if __name__ == "__main__":
         ignore_mismatched_sizes=True
     ).to(DEVICE)
 
-    criterion = nn.CrossEntropyLoss(ignore_index=255)
     optimizer = create_optimizer(segformer_model)
-
     base_lr = 6e-5
     warmup_epochs = 5
     scheduler = WarmupPolyLR(optimizer, warmup_epochs, EPOCHS, base_lr)

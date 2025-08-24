@@ -140,14 +140,12 @@ def evaluate_unet(model, val_loader, num_classes=104, visualize=True):
             outputs = model(images)
             preds = torch.argmax(outputs, dim=1)
 
-            # Flatten for confusion matrix (accuracy)
             preds_flat = preds.view(-1).cpu().numpy()
             labels_flat = labels.view(-1).cpu().numpy()
             mask = labels_flat != 255
             preds_flat = preds_flat[mask]
             labels_flat = labels_flat[mask]
 
-            # Accuracy calculation using confusion matrix
             for p, t in zip(preds_flat, labels_flat):
                 conf_matrix[t, p] += 1
 
@@ -160,9 +158,6 @@ def evaluate_unet(model, val_loader, num_classes=104, visualize=True):
 
     # Compute pixel accuracy
     pixel_acc = np.diag(conf_matrix).sum() / conf_matrix.sum()
-
-    # Compute mIoU using Jaccard Index
-
     miou = total_iou / count
     print(f"Validation mIoU: {miou:.4f}")
     print(f"Validation Pixel Accuracy: {pixel_acc:.4f}")
@@ -291,9 +286,8 @@ if __name__ == "__main__":
         classes= NUM_CLASSES                   
     ).to(DEVICE)
 
-    criterion = nn.CrossEntropyLoss(ignore_index=255)
-    optimizer = create_optimizer(unet_model)
 
+    optimizer = create_optimizer(unet_model)
     base_lr = 6e-5
     warmup_epochs = 5
     scheduler = WarmupPolyLR(optimizer, warmup_epochs, EPOCHS, base_lr)
@@ -308,5 +302,5 @@ if __name__ == "__main__":
     print("Validating U-Net++ ended...")
 
     torch.cuda.empty_cache()
-    torch.save(unet_model.state_dict(), "unetplusplus_model_resnet101_run8.pth")
-    print("Model saved as unetplusplus_model_resnet101_run8.pth")
+    torch.save(unet_model.state_dict(), "unetplusplus_model_resnet101_run10.pth")
+    print("Model saved as unetplusplus_model_resnet101_run10.pth")

@@ -99,7 +99,6 @@ def train_segformer(num_epochs, model, optimizer, train_loader, scheduler):
                             desc=f"Epoch: {epoch + 1} / {num_epochs}",
                             unit="batch")
 
-        # Show current learning rate
         current_lr = scheduler.get_last_lr()[0]
         print(f"Current Learning Rate: {current_lr:.8f}")
 
@@ -130,7 +129,6 @@ def train_segformer(num_epochs, model, optimizer, train_loader, scheduler):
             running_loss += loss.item()
             progress_bar.set_postfix(avg_loss=running_loss / i)
         
-        # Step scheduler
         scheduler.step()
 
         avg = running_loss / len(train_loader)
@@ -149,7 +147,6 @@ def evaluate_segformer(model, val_loader, num_classes=104, visualize=True):
     print("\nEvaluating on validation set v2...")
     model.eval()
 
-    # For pixel accuracy
     conf_matrix = np.zeros((num_classes, num_classes), dtype=np.int64)
     total_iou = 0
     count = 0
@@ -163,14 +160,12 @@ def evaluate_segformer(model, val_loader, num_classes=104, visualize=True):
             outputs = F.interpolate(outputs, size=labels.shape[1:], mode="bilinear", align_corners=False)
             preds = torch.argmax(outputs, dim=1)
 
-            # Flatten for confusion matrix (accuracy)
             preds_flat = preds.view(-1).cpu().numpy()
             labels_flat = labels.view(-1).cpu().numpy()
             mask = labels_flat != 255
             preds_flat = preds_flat[mask]
             labels_flat = labels_flat[mask]
 
-            # Accuracy calculation using confusion matrix
             for p, t in zip(preds_flat, labels_flat):
                 conf_matrix[t, p] += 1
 
@@ -277,9 +272,7 @@ if __name__ == "__main__":
         ignore_mismatched_sizes=True
     ).to(DEVICE)
 
-    criterion = nn.CrossEntropyLoss(ignore_index=255)
     optimizer = create_optimizer(segformer_model)
-
     scheduler = LambdaLR(optimizer, lr_lambda=poly_lr_lambda)
 
     print("------------------------------------------")

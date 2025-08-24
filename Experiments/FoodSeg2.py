@@ -154,9 +154,6 @@ def evaluate_deeplab(model, val_loader, num_classes=104, visualize=True):
 
     # Compute pixel accuracy
     pixel_acc = np.diag(conf_matrix).sum() / conf_matrix.sum()
-
-    # Compute mIoU using Jaccard Index
-
     miou = total_iou / count
     print(f"Validation mIoU: {miou:.4f}")
     print(f"Validation Pixel Accuracy: {pixel_acc:.4f}")
@@ -212,7 +209,6 @@ def evaluate_unet(model, val_loader, num_classes=104, visualize=True):
             outputs = model(images)
             preds = torch.argmax(outputs, dim=1)
 
-            # Flatten for confusion matrix (accuracy)
             preds_flat = preds.view(-1).cpu().numpy()
             labels_flat = labels.view(-1).cpu().numpy()
             mask = labels_flat != 255
@@ -232,9 +228,6 @@ def evaluate_unet(model, val_loader, num_classes=104, visualize=True):
 
     # Compute pixel accuracy
     pixel_acc = np.diag(conf_matrix).sum() / conf_matrix.sum()
-
-    # Compute mIoU using Jaccard Index
-
     miou = total_iou / count
     print(f"Validation mIoU: {miou:.4f}")
     print(f"Validation Pixel Accuracy: {pixel_acc:.4f}")
@@ -263,7 +256,6 @@ def train_segformer(num_epochs, model, optimizer, criterion, train_loader, sched
             logits = F.interpolate(logits, size=labels.shape[1:], 
                                    mode="bilinear", align_corners=False)
 
-            # compute CE loss directly on the tensor
             loss = criterion(logits, labels)
             loss.backward()
             optimizer.step()
@@ -297,7 +289,6 @@ def evaluate_segformer(model, val_loader, num_classes=104, visualize=True):
             outputs = F.interpolate(outputs, size=labels.shape[1:], mode="bilinear", align_corners=False)
             preds = torch.argmax(outputs, dim=1)
 
-            # Flatten for confusion matrix (accuracy)
             preds_flat = preds.view(-1).cpu().numpy()
             labels_flat = labels.view(-1).cpu().numpy()
             mask = labels_flat != 255

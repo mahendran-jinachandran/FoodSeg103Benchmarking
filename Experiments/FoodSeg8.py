@@ -4,7 +4,6 @@ import time
 import numpy as np
 from tqdm import tqdm
 import torch.nn as nn
-
 from torch import optim
 import albumentations as A
 import torch.nn.functional as F
@@ -166,18 +165,15 @@ def evaluate_deeplab(model, val_loader, num_classes=104, visualize=True):
             outputs = model(images)['out']
             preds = torch.argmax(outputs, dim=1)
 
-            # Flatten for confusion matrix (accuracy)
             preds_flat = preds.view(-1).cpu().numpy()
             labels_flat = labels.view(-1).cpu().numpy()
             mask = labels_flat != 255
             preds_flat = preds_flat[mask]
             labels_flat = labels_flat[mask]
 
-            # Accuracy calculation using confusion matrix
             for p, t in zip(preds_flat, labels_flat):
                 conf_matrix[t, p] += 1
 
-            # mIoU using torchmetrics (requires torch tensors)
             iou = compute_iou(preds, labels)
             total_iou += iou
             count += 1
@@ -188,9 +184,6 @@ def evaluate_deeplab(model, val_loader, num_classes=104, visualize=True):
 
     # Compute pixel accuracy
     pixel_acc = np.diag(conf_matrix).sum() / conf_matrix.sum()
-
-    # Compute mIoU using Jaccard Index
-
     miou = total_iou / count
     print(f"Validation mIoU: {miou:.4f}")
     print(f"Validation Pixel Accuracy: {pixel_acc:.4f}")
@@ -258,14 +251,12 @@ def evaluate_unet(model, val_loader, num_classes=104, visualize=True):
             outputs = model(images)
             preds = torch.argmax(outputs, dim=1)
 
-            # Flatten for confusion matrix (accuracy)
             preds_flat = preds.view(-1).cpu().numpy()
             labels_flat = labels.view(-1).cpu().numpy()
             mask = labels_flat != 255
             preds_flat = preds_flat[mask]
             labels_flat = labels_flat[mask]
 
-            # Accuracy calculation using confusion matrix
             for p, t in zip(preds_flat, labels_flat):
                 conf_matrix[t, p] += 1
 
@@ -278,9 +269,6 @@ def evaluate_unet(model, val_loader, num_classes=104, visualize=True):
 
     # Compute pixel accuracy
     pixel_acc = np.diag(conf_matrix).sum() / conf_matrix.sum()
-
-    # Compute mIoU using Jaccard Index
-
     miou = total_iou / count
     print(f"Validation mIoU: {miou:.4f}")
     print(f"Validation Pixel Accuracy: {pixel_acc:.4f}")
@@ -337,9 +325,7 @@ def train_segformer(num_epochs, model, optimizer, train_loader, scheduler, freez
             running_loss += loss.item()
             progress_bar.set_postfix(avg_loss=running_loss / i)
         
-        # Step scheduler
         scheduler.step()
-
         avg = running_loss / len(train_loader)
         loss_history.append(avg)
 
@@ -370,14 +356,12 @@ def evaluate_segformer(model, val_loader, num_classes=104, visualize=True):
             outputs = F.interpolate(outputs, size=labels.shape[1:], mode="bilinear", align_corners=False)
             preds = torch.argmax(outputs, dim=1)
 
-            # Flatten for confusion matrix (accuracy)
             preds_flat = preds.view(-1).cpu().numpy()
             labels_flat = labels.view(-1).cpu().numpy()
             mask = labels_flat != 255
             preds_flat = preds_flat[mask]
             labels_flat = labels_flat[mask]
 
-            # Accuracy calculation using confusion matrix
             for p, t in zip(preds_flat, labels_flat):
                 conf_matrix[t, p] += 1
 
@@ -392,7 +376,6 @@ def evaluate_segformer(model, val_loader, num_classes=104, visualize=True):
 
     # Compute pixel accuracy
     pixel_acc = np.diag(conf_matrix).sum() / conf_matrix.sum()
-
     miou = total_iou / count
     print(f"Validation mIoU: {miou:.4f}")
     print(f"Validation Pixel Accuracy: {pixel_acc:.4f}")
@@ -518,9 +501,7 @@ if __name__ == "__main__":
     deeplab_model.classifier[4] = nn.Conv2d(256, NUM_CLASSES, kernel_size=1)
     deeplab_model = deeplab_model.to(DEVICE)
 
-    criterion = nn.CrossEntropyLoss(ignore_index=255)
     optimizer = create_optimizer(deeplab_model)
-
     base_lr = 6e-5
     warmup_epochs = 5
     scheduler = WarmupPolyLR(optimizer, warmup_epochs, EPOCHS, base_lr)
@@ -536,8 +517,8 @@ if __name__ == "__main__":
 
 
     torch.cuda.empty_cache()
-    torch.save(deeplab_model.state_dict(), "deeplabv3_resnet101_run6.pth")
-    print("Model saved as deeplabv3_resnet101_run6.pth")
+    torch.save(deeplab_model.state_dict(), "deeplabv3_resnet101_run8.pth")
+    print("Model saved as deeplabv3_resnet101_run8.pth")
 
 
     # U-Net
@@ -548,9 +529,7 @@ if __name__ == "__main__":
         classes= NUM_CLASSES                   
     ).to(DEVICE)
 
-    criterion = nn.CrossEntropyLoss(ignore_index=255)
     optimizer = create_optimizer(unet_model)
-
     base_lr = 6e-5
     warmup_epochs = 5
     scheduler = WarmupPolyLR(optimizer, warmup_epochs, EPOCHS, base_lr)
@@ -565,8 +544,8 @@ if __name__ == "__main__":
     print("Validating U-Net ended...")
 
     torch.cuda.empty_cache()
-    torch.save(unet_model.state_dict(), "unet_model_resnet101_run6.pth")
-    print("Model saved as unet_model_resnet101_run6.pth")
+    torch.save(unet_model.state_dict(), "unet_model_resnet101_run8.pth")
+    print("Model saved as unet_model_resnet101_run8.pth")
 
     # SegFormer
     segformer_model = SegformerForSemanticSegmentation.from_pretrained(
@@ -575,9 +554,8 @@ if __name__ == "__main__":
         ignore_mismatched_sizes=True
     ).to(DEVICE)
 
-    criterion = nn.CrossEntropyLoss(ignore_index=255)
-    optimizer = create_optimizer(segformer_model)
 
+    optimizer = create_optimizer(segformer_model)
     base_lr = 6e-5
     warmup_epochs = 5
     scheduler = WarmupPolyLR(optimizer, warmup_epochs, EPOCHS, base_lr)
@@ -592,5 +570,5 @@ if __name__ == "__main__":
     print("Validating SegFormer ended...")
 
     torch.cuda.empty_cache()
-    torch.save(segformer_model.state_dict(), "segformer_model_b2_run6.pth")
-    print("Model saved as segformer_model_b2_run6.pth")
+    torch.save(segformer_model.state_dict(), "segformer_model_b2_run8.pth")
+    print("Model saved as segformer_model_b2_run8.pth")
