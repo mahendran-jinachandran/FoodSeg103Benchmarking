@@ -399,8 +399,6 @@ if __name__ == "__main__":
     print("Validating DeepLabV3 started...")
     deeplab_accuracy, deeplab_miou = evaluate_deeplab(deeplab_model, val_dataloader)
     print("Validating DeepLabV3 ended...")
-    print("DeepLabV3 Accuracy: ", deeplab_accuracy)
-    print("DeepLabV3 mIoU: ", deeplab_miou)
 
     torch.cuda.empty_cache()
     torch.save(deeplab_model.state_dict(), "deeplabv3_resnet101_run1.pth")
@@ -427,8 +425,6 @@ if __name__ == "__main__":
     print("Validating U-Net started...")
     unet_accuracy, unet_miou = evaluate_unet(unet_model, val_dataloader)
     print("Validating U-Net ended...")
-    print("U-Net Accuracy: ", unet_accuracy)
-    print("U-Net mIoU: ", unet_miou)
 
     torch.cuda.empty_cache()
     torch.save(unet_model.state_dict(), "unet_model_resnet101_run1.pth")
@@ -455,8 +451,6 @@ if __name__ == "__main__":
     print("Validating SegFormer started...")
     segformer_accuracy, segformer_miou = evaluate_segformer(segformer_model, val_dataloader)
     print("Validating SegFormer ended...")
-    print("SegFormer Accuracy: ", segformer_accuracy)
-    print("SegFormer mIoU: ", segformer_miou)
 
     torch.cuda.empty_cache()
     torch.save(segformer_model.state_dict(), "segformer_model_b2_run1.pth")

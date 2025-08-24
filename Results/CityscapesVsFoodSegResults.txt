@@ -1,0 +1,552 @@
+12.8
+True
+NVIDIA A100 80GB PCIe
+DEVICE: cuda:1
+Images Shape:  torch.Size([8, 3, 512, 512])
+Labels Shape:  torch.Size([8, 512, 512])
+Unique Labels:  [  0   1   2   3   4   5   6   7   8   9  10  11  12  13  17  18 255]
+------------------------------------------
+Training DeepLabV3 started...
+Freezing layers...
+
+Epoch 1/50
+Epoch 1 completed in 8.33 min | Avg Loss: 1.1090
+
+Epoch 2/50
+Epoch 2 completed in 8.32 min | Avg Loss: 0.8041
+
+Epoch 3/50
+Epoch 3 completed in 8.51 min | Avg Loss: 0.7115
+
+Epoch 4/50
+Epoch 4 completed in 8.35 min | Avg Loss: 0.6706
+
+Epoch 5/50
+Epoch 5 completed in 8.27 min | Avg Loss: 0.6447
+Unfreezing layers...
+
+Epoch 6/50
+Epoch 6 completed in 9.13 min | Avg Loss: 0.5944
+
+Epoch 7/50
+Epoch 7 completed in 9.22 min | Avg Loss: 0.5411
+
+Epoch 8/50
+Epoch 8 completed in 8.04 min | Avg Loss: 0.5097
+
+Epoch 9/50
+Epoch 9 completed in 7.46 min | Avg Loss: 0.4805
+
+Epoch 10/50
+Epoch 10 completed in 7.49 min | Avg Loss: 0.4611
+
+Epoch 11/50
+Epoch 11 completed in 7.30 min | Avg Loss: 0.4501
+
+Epoch 12/50
+Epoch 12 completed in 7.51 min | Avg Loss: 0.4345
+
+Epoch 13/50
+Epoch 13 completed in 7.42 min | Avg Loss: 0.4245
+
+Epoch 14/50
+Epoch 14 completed in 7.43 min | Avg Loss: 0.4158
+
+Epoch 15/50
+Epoch 15 completed in 7.38 min | Avg Loss: 0.3961
+
+Epoch 16/50
+Epoch 16 completed in 7.45 min | Avg Loss: 0.3627
+
+Epoch 17/50
+Epoch 17 completed in 7.55 min | Avg Loss: 0.3282
+
+Epoch 18/50
+Epoch 18 completed in 7.51 min | Avg Loss: 0.2846
+
+Epoch 19/50
+Epoch 19 completed in 7.39 min | Avg Loss: 0.2648
+
+Epoch 20/50
+Epoch 20 completed in 7.34 min | Avg Loss: 0.2477
+
+Epoch 21/50
+Epoch 21 completed in 7.31 min | Avg Loss: 0.2361
+
+Epoch 22/50
+Epoch 22 completed in 7.54 min | Avg Loss: 0.2276
+
+Epoch 23/50
+Epoch 23 completed in 7.55 min | Avg Loss: 0.2191
+
+Epoch 24/50
+Epoch 24 completed in 8.67 min | Avg Loss: 0.2147
+
+Epoch 25/50
+Epoch 25 completed in 10.43 min | Avg Loss: 0.2076
+
+Epoch 26/50
+Epoch 26 completed in 10.37 min | Avg Loss: 0.2014
+
+Epoch 27/50
+Epoch 27 completed in 9.53 min | Avg Loss: 0.1953
+
+Epoch 28/50
+Epoch 28 completed in 9.62 min | Avg Loss: 0.1910
+
+Epoch 29/50
+Epoch 29 completed in 9.20 min | Avg Loss: 0.1860
+
+Epoch 30/50
+Epoch 30 completed in 9.68 min | Avg Loss: 0.1819
+
+Epoch 31/50
+Epoch 31 completed in 8.57 min | Avg Loss: 0.1794
+
+Epoch 32/50
+Epoch 32 completed in 7.77 min | Avg Loss: 0.1766
+
+Epoch 33/50
+Epoch 33 completed in 5.99 min | Avg Loss: 0.1725
+
+Epoch 34/50
+Epoch 34 completed in 5.98 min | Avg Loss: 0.1679
+
+Epoch 35/50
+Epoch 35 completed in 6.73 min | Avg Loss: 0.1646
+
+Epoch 36/50
+Epoch 36 completed in 6.68 min | Avg Loss: 0.1611
+
+Epoch 37/50
+Epoch 37 completed in 5.97 min | Avg Loss: 0.1578
+
+Epoch 38/50
+Epoch 38 completed in 5.98 min | Avg Loss: 0.1557
+
+Epoch 39/50
+Epoch 39 completed in 5.98 min | Avg Loss: 0.1537
+
+Epoch 40/50
+Epoch 40 completed in 6.08 min | Avg Loss: 0.1509
+
+Epoch 41/50
+Epoch 41 completed in 6.00 min | Avg Loss: 0.1478
+
+Epoch 42/50
+Epoch 42 completed in 5.98 min | Avg Loss: 0.1459
+
+Epoch 43/50
+Epoch 43 completed in 5.97 min | Avg Loss: 0.1435
+
+Epoch 44/50
+Epoch 44 completed in 5.96 min | Avg Loss: 0.1420
+
+Epoch 45/50
+Epoch 45 completed in 5.96 min | Avg Loss: 0.1394
+
+Epoch 46/50
+Epoch 46 completed in 5.95 min | Avg Loss: 0.1386
+
+Epoch 47/50
+Epoch 47 completed in 6.01 min | Avg Loss: 0.1361
+
+Epoch 48/50
+Epoch 48 completed in 5.98 min | Avg Loss: 0.1353
+
+Epoch 49/50
+Epoch 49 completed in 5.99 min | Avg Loss: 0.1342
+
+Epoch 50/50
+Epoch 50 completed in 5.97 min | Avg Loss: 0.1332
+
+Total Training Time: 22366.79 seconds (372.78 minutes)
+Training DeepLabV3 ended...
+DeepLabV3 Total Loss:  [1.1089659291569904, 0.804129865541253, 0.7114733236451303, 0.6706219358790305, 0.6447078212294527, 0.5943756757243988, 0.5411097953716913, 0.5097012495802294, 0.480498807725086, 0.46107932756985387, 0.4501072443941588, 0.4344855506894409, 0.4245451118356438, 0.41582573493642194, 0.39613676271451415, 0.36271873509050695, 0.3282402232289314, 0.28463430618566854, 0.26479970868076047, 0.24767699264871176, 0.2360810326632633, 0.22759353982344752, 0.21907877689728172, 0.21466624852950855, 0.2076174900816974, 0.20135054781392056, 0.195318173456897, 0.1910277591036853, 0.18596203881566242, 0.18193768922199485, 0.17944920679894827, 0.17660899943001168, 0.17249110096725084, 0.16788901108246979, 0.1646149222568799, 0.16111485838329279, 0.157760331707616, 0.15570153145780485, 0.1536998147525454, 0.15085820791622004, 0.14782145521253026, 0.14587056398471837, 0.14351394664376013, 0.1420364184805783, 0.13937416588587145, 0.13864680149302047, 0.13612410484222315, 0.13525451541507758, 0.13419066661948797, 0.1332035678569027]
+Validating DeepLabV3 started...
+
+Evaluating on validation set...
+Validation mIoU: 0.4600
+Validation Pixel Accuracy: 0.9007
+Validating DeepLabV3 ended...
+Model saved as deeplabv3_resnet101_run11.pth
+------------------------------------------
+Training U-Net started...
+Freezing layers...
+
+Epoch 1/50
+Epoch 1 completed in 4.75 min | Avg Loss: 1.1306
+
+Epoch 2/50
+Epoch 2 completed in 4.76 min | Avg Loss: 0.8779
+
+Epoch 3/50
+Epoch 3 completed in 4.82 min | Avg Loss: 0.7611
+
+Epoch 4/50
+Epoch 4 completed in 4.74 min | Avg Loss: 0.7148
+
+Epoch 5/50
+Epoch 5 completed in 4.78 min | Avg Loss: 0.6914
+Unfreezing layers...
+
+Epoch 6/50
+Epoch 6 completed in 5.05 min | Avg Loss: 0.6752
+
+Epoch 7/50
+Epoch 7 completed in 5.07 min | Avg Loss: 0.6522
+
+Epoch 8/50
+Epoch 8 completed in 5.07 min | Avg Loss: 0.6357
+
+Epoch 9/50
+Epoch 9 completed in 5.06 min | Avg Loss: 0.6151
+
+Epoch 10/50
+Epoch 10 completed in 5.04 min | Avg Loss: 0.5967
+
+Epoch 11/50
+Epoch 11 completed in 5.05 min | Avg Loss: 0.5779
+
+Epoch 12/50
+Epoch 12 completed in 5.08 min | Avg Loss: 0.5622
+
+Epoch 13/50
+Epoch 13 completed in 5.06 min | Avg Loss: 0.5475
+
+Epoch 14/50
+Epoch 14 completed in 5.13 min | Avg Loss: 0.5318
+
+Epoch 15/50
+Epoch 15 completed in 5.09 min | Avg Loss: 0.5127
+
+Epoch 16/50
+Epoch 16 completed in 5.06 min | Avg Loss: 0.4994
+
+Epoch 17/50
+Epoch 17 completed in 5.06 min | Avg Loss: 0.4926
+
+Epoch 18/50
+Epoch 18 completed in 5.06 min | Avg Loss: 0.4832
+
+Epoch 19/50
+Epoch 19 completed in 5.06 min | Avg Loss: 0.4714
+
+Epoch 20/50
+Epoch 20 completed in 5.08 min | Avg Loss: 0.4623
+
+Epoch 21/50
+Epoch 21 completed in 5.09 min | Avg Loss: 0.4474
+
+Epoch 22/50
+Epoch 22 completed in 5.03 min | Avg Loss: 0.4363
+
+Epoch 23/50
+Epoch 23 completed in 5.03 min | Avg Loss: 0.4173
+
+Epoch 24/50
+Epoch 24 completed in 5.03 min | Avg Loss: 0.3975
+
+Epoch 25/50
+Epoch 25 completed in 5.03 min | Avg Loss: 0.3724
+
+Epoch 26/50
+Epoch 26 completed in 5.05 min | Avg Loss: 0.3505
+
+Epoch 27/50
+Epoch 27 completed in 5.03 min | Avg Loss: 0.3390
+
+Epoch 28/50
+Epoch 28 completed in 5.05 min | Avg Loss: 0.3264
+
+Epoch 29/50
+Epoch 29 completed in 5.06 min | Avg Loss: 0.3179
+
+Epoch 30/50
+Epoch 30 completed in 5.06 min | Avg Loss: 0.3115
+
+Epoch 31/50
+Epoch 31 completed in 5.06 min | Avg Loss: 0.3043
+
+Epoch 32/50
+Epoch 32 completed in 5.05 min | Avg Loss: 0.2989
+
+Epoch 33/50
+Epoch 33 completed in 5.05 min | Avg Loss: 0.2943
+
+Epoch 34/50
+Epoch 34 completed in 5.04 min | Avg Loss: 0.2853
+
+Epoch 35/50
+Epoch 35 completed in 5.04 min | Avg Loss: 0.2832
+
+Epoch 36/50
+Epoch 36 completed in 5.04 min | Avg Loss: 0.2806
+
+Epoch 37/50
+Epoch 37 completed in 5.10 min | Avg Loss: 0.2715
+
+Epoch 38/50
+Epoch 38 completed in 5.06 min | Avg Loss: 0.2671
+
+Epoch 39/50
+Epoch 39 completed in 5.06 min | Avg Loss: 0.2623
+
+Epoch 40/50
+Epoch 40 completed in 5.07 min | Avg Loss: 0.2549
+
+Epoch 41/50
+Epoch 41 completed in 5.03 min | Avg Loss: 0.2490
+
+Epoch 42/50
+Epoch 42 completed in 5.03 min | Avg Loss: 0.2422
+
+Epoch 43/50
+Epoch 43 completed in 5.04 min | Avg Loss: 0.2357
+
+Epoch 44/50
+Epoch 44 completed in 5.03 min | Avg Loss: 0.2319
+
+Epoch 45/50
+Epoch 45 completed in 5.04 min | Avg Loss: 0.2263
+
+Epoch 46/50
+Epoch 46 completed in 5.04 min | Avg Loss: 0.2210
+
+Epoch 47/50
+Epoch 47 completed in 5.03 min | Avg Loss: 0.2202
+
+Epoch 48/50
+Epoch 48 completed in 5.03 min | Avg Loss: 0.2174
+
+Epoch 49/50
+Epoch 49 completed in 5.04 min | Avg Loss: 0.2148
+
+Epoch 50/50
+Epoch 50 completed in 5.08 min | Avg Loss: 0.2148
+
+Total Training Time: 15074.47 seconds (251.24 minutes)
+Training U-Net ended...
+U-Net Total Loss:  [1.1305563015642988, 0.8779361190334443, 0.7610707255781338, 0.7148468832495392, 0.6914211782396481, 0.6752005991756275, 0.6521880368712127, 0.6357367767762112, 0.6151039406496991, 0.5967414080295511, 0.5779283244603424, 0.5621693671070119, 0.5475457013454489, 0.5317795806995003, 0.5127443015094726, 0.4993822294217284, 0.49258911112944287, 0.4831545333708486, 0.4714168693109225, 0.4623172847974685, 0.44735666917216393, 0.4362650723547064, 0.4172990955812957, 0.3974729698672089, 0.37241229086473426, 0.3505474232057089, 0.33901576918139253, 0.3263865455744728, 0.3179466915467093, 0.3115425777210984, 0.30429014271145227, 0.2989419541692221, 0.29427850727112065, 0.28532505051423146, 0.28322801466590614, 0.28058209386403843, 0.2715414582641535, 0.26707748740270576, 0.26229162257845684, 0.25494634980956715, 0.24900675128384303, 0.2421842493036742, 0.23570018674256982, 0.2318507670074381, 0.22632955070785296, 0.22096740867021264, 0.2202151523882984, 0.21741620827746647, 0.21478879171353515, 0.21477523373980675]
+Validating U-Net started...
+
+Evaluating on validation set...
+Validation mIoU: 0.2997
+Validation Pixel Accuracy: 0.7864
+Validating U-Net ended...
+Model saved as unet_model_resnet101_run11.pth
+------------------------------------------
+Training SegFormer started...
+Freezing layers...
+
+Epoch 1/50
+Current Learning Rate: 0.00001280
+Epoch 1 completed in 4.81 min | Avg Loss: 1.3036
+
+Epoch 2/50
+Current Learning Rate: 0.00002460
+Epoch 2 completed in 4.81 min | Avg Loss: 0.8185
+
+Epoch 3/50
+Current Learning Rate: 0.00003640
+Epoch 3 completed in 4.80 min | Avg Loss: 0.7155
+
+Epoch 4/50
+Current Learning Rate: 0.00004820
+Epoch 4 completed in 4.83 min | Avg Loss: 0.6927
+
+Epoch 5/50
+Current Learning Rate: 0.00006000
+Epoch 5 completed in 4.80 min | Avg Loss: 0.6705
+Unfreezing layers...
+
+Epoch 6/50
+Current Learning Rate: 0.00005880
+Epoch 6 completed in 5.45 min | Avg Loss: 0.6280
+
+Epoch 7/50
+Current Learning Rate: 0.00005759
+Epoch 7 completed in 5.45 min | Avg Loss: 0.5624
+
+Epoch 8/50
+Current Learning Rate: 0.00005639
+Epoch 8 completed in 5.46 min | Avg Loss: 0.5023
+
+Epoch 9/50
+Current Learning Rate: 0.00005518
+Epoch 9 completed in 5.46 min | Avg Loss: 0.4761
+
+Epoch 10/50
+Current Learning Rate: 0.00005397
+Epoch 10 completed in 5.51 min | Avg Loss: 0.4568
+
+Epoch 11/50
+Current Learning Rate: 0.00005275
+Epoch 11 completed in 5.45 min | Avg Loss: 0.4430
+
+Epoch 12/50
+Current Learning Rate: 0.00005153
+Epoch 12 completed in 5.47 min | Avg Loss: 0.3962
+
+Epoch 13/50
+Current Learning Rate: 0.00005031
+Epoch 13 completed in 5.45 min | Avg Loss: 0.3393
+
+Epoch 14/50
+Current Learning Rate: 0.00004908
+Epoch 14 completed in 5.47 min | Avg Loss: 0.3203
+
+Epoch 15/50
+Current Learning Rate: 0.00004785
+Epoch 15 completed in 5.45 min | Avg Loss: 0.3038
+
+Epoch 16/50
+Current Learning Rate: 0.00004662
+Epoch 16 completed in 5.47 min | Avg Loss: 0.2979
+
+Epoch 17/50
+Current Learning Rate: 0.00004539
+Epoch 17 completed in 5.45 min | Avg Loss: 0.2900
+
+Epoch 18/50
+Current Learning Rate: 0.00004415
+Epoch 18 completed in 5.46 min | Avg Loss: 0.2838
+
+Epoch 19/50
+Current Learning Rate: 0.00004290
+Epoch 19 completed in 5.47 min | Avg Loss: 0.2721
+
+Epoch 20/50
+Current Learning Rate: 0.00004166
+Epoch 20 completed in 5.46 min | Avg Loss: 0.2591
+
+Epoch 21/50
+Current Learning Rate: 0.00004040
+Epoch 21 completed in 5.47 min | Avg Loss: 0.2478
+
+Epoch 22/50
+Current Learning Rate: 0.00003915
+Epoch 22 completed in 5.45 min | Avg Loss: 0.2434
+
+Epoch 23/50
+Current Learning Rate: 0.00003789
+Epoch 23 completed in 5.46 min | Avg Loss: 0.2342
+
+Epoch 24/50
+Current Learning Rate: 0.00003662
+Epoch 24 completed in 5.46 min | Avg Loss: 0.2315
+
+Epoch 25/50
+Current Learning Rate: 0.00003535
+Epoch 25 completed in 5.47 min | Avg Loss: 0.2275
+
+Epoch 26/50
+Current Learning Rate: 0.00003408
+Epoch 26 completed in 5.46 min | Avg Loss: 0.2245
+
+Epoch 27/50
+Current Learning Rate: 0.00003280
+Epoch 27 completed in 5.46 min | Avg Loss: 0.2198
+
+Epoch 28/50
+Current Learning Rate: 0.00003151
+Epoch 28 completed in 5.46 min | Avg Loss: 0.2159
+
+Epoch 29/50
+Current Learning Rate: 0.00003022
+Epoch 29 completed in 5.45 min | Avg Loss: 0.2133
+
+Epoch 30/50
+Current Learning Rate: 0.00002892
+Epoch 30 completed in 5.45 min | Avg Loss: 0.2105
+
+Epoch 31/50
+Current Learning Rate: 0.00002761
+Epoch 31 completed in 5.45 min | Avg Loss: 0.2088
+
+Epoch 32/50
+Current Learning Rate: 0.00002630
+Epoch 32 completed in 5.45 min | Avg Loss: 0.2045
+
+Epoch 33/50
+Current Learning Rate: 0.00002498
+Epoch 33 completed in 5.45 min | Avg Loss: 0.2029
+
+Epoch 34/50
+Current Learning Rate: 0.00002366
+Epoch 34 completed in 5.46 min | Avg Loss: 0.2013
+
+Epoch 35/50
+Current Learning Rate: 0.00002232
+Epoch 35 completed in 5.47 min | Avg Loss: 0.1994
+
+Epoch 36/50
+Current Learning Rate: 0.00002098
+Epoch 36 completed in 5.46 min | Avg Loss: 0.1989
+
+Epoch 37/50
+Current Learning Rate: 0.00001962
+Epoch 37 completed in 5.46 min | Avg Loss: 0.1971
+
+Epoch 38/50
+Current Learning Rate: 0.00001826
+Epoch 38 completed in 5.51 min | Avg Loss: 0.1961
+
+Epoch 39/50
+Current Learning Rate: 0.00001689
+Epoch 39 completed in 5.45 min | Avg Loss: 0.1929
+
+Epoch 40/50
+Current Learning Rate: 0.00001550
+Epoch 40 completed in 5.47 min | Avg Loss: 0.1930
+
+Epoch 41/50
+Current Learning Rate: 0.00001410
+Epoch 41 completed in 5.45 min | Avg Loss: 0.1917
+
+Epoch 42/50
+Current Learning Rate: 0.00001268
+Epoch 42 completed in 5.48 min | Avg Loss: 0.1918
+
+Epoch 43/50
+Current Learning Rate: 0.00001124
+Epoch 43 completed in 5.46 min | Avg Loss: 0.1891
+
+Epoch 44/50
+Current Learning Rate: 0.00000979
+Epoch 44 completed in 5.47 min | Avg Loss: 0.1881
+
+Epoch 45/50
+Current Learning Rate: 0.00000830
+Epoch 45 completed in 5.47 min | Avg Loss: 0.1880
+
+Epoch 46/50
+Current Learning Rate: 0.00000679
+Epoch 46 completed in 5.44 min | Avg Loss: 0.1858
+
+Epoch 47/50
+Current Learning Rate: 0.00000524
+Epoch 47 completed in 5.50 min | Avg Loss: 0.1863
+
+Epoch 48/50
+Current Learning Rate: 0.00000364
+Epoch 48 completed in 5.45 min | Avg Loss: 0.1850
+
+Epoch 49/50
+Current Learning Rate: 0.00000195
+Epoch 49 completed in 5.47 min | Avg Loss: 0.1855
+
+Epoch 50/50
+Current Learning Rate: 0.00000000
+Epoch 50 completed in 5.47 min | Avg Loss: 0.1835
+
+Total Training Time: 16193.41 seconds (269.89 minutes)
+Training SegFormer ended...
+SegFormer Total Loss:  [1.3036013003638995, 0.8185016242086246, 0.7155275774258439, 0.6927378661529993, 0.6705094503779565, 0.6280212330241357, 0.5623677661342006, 0.5022907796245749, 0.4760784268859894, 0.45682149340388595, 0.4429717497319304, 0.39618793987138295, 0.3392660394310951, 0.3203364205296322, 0.3037990677340697, 0.2978716928071232, 0.2899930929384565, 0.2837753930800064, 0.2721477164536394, 0.25909058681579045, 0.2478454707851333, 0.24342457265142473, 0.2342246443193446, 0.23145840861784514, 0.22752212524734516, 0.22450571202783173, 0.21977505095863856, 0.21588191177736046, 0.21333582619185087, 0.21047327863753482, 0.2088292774253635, 0.2045426553175334, 0.20287162474086207, 0.20133659728271988, 0.19935197679586308, 0.19892418897280129, 0.19705538259398553, 0.19606038539480136, 0.19294051773926263, 0.1929848053722933, 0.19172616515268562, 0.19176626209450023, 0.1890861945607329, 0.1880909356699195, 0.1880248782615508, 0.1857713395629519, 0.1863051744238023, 0.18502142256306064, 0.18550654468677377, 0.18354382343910713]
+Validating SegFormer started...
+
+Evaluating on validation set v2...
+Validation mIoU: 0.5084
+Validation Pixel Accuracy: 0.9135
+Validating SegFormer ended...
+Model saved as segformer_model_b2_run11.pth

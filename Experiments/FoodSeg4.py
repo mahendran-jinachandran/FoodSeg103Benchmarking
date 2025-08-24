@@ -292,5 +292,5 @@ if __name__ == "__main__":
     print("Validating SegFormer ended...")
 
     torch.cuda.empty_cache()
-    torch.save(segformer_model.state_dict(), "segformer_model_b2_run4point1.pth")
-    print("Model saved as segformer_model_b2_run4point1.pth")
+    torch.save(segformer_model.state_dict(), "segformer_model_b2_run4.pth")
+    print("Model saved as segformer_model_b2_run4.pth")

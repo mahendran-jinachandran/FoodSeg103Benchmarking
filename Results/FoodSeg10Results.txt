@@ -1,0 +1,172 @@
+Images size:  (512, 384)
+12.8
+True
+NVIDIA A100 80GB PCIe
+DEVICE: cuda:0
+Images Shape:  torch.Size([8, 3, 512, 512])
+Labels Shape:  torch.Size([8, 512, 512])
+Unique Labels:  [  0  24  31  34  36  37  41  44  45  48  52  54  58  65  67  80  85  87
+  89 103]
+------------------------------------------
+Training U-Net++ started...
+
+Epoch 1/50
+Epoch 1 completed in 14.76 min | Avg Loss: 2.4900
+
+Epoch 2/50
+Epoch 2 completed in 15.58 min | Avg Loss: 1.8475
+
+Epoch 3/50
+Epoch 3 completed in 15.68 min | Avg Loss: 1.4068
+
+Epoch 4/50
+Epoch 4 completed in 15.57 min | Avg Loss: 1.2522
+
+Epoch 5/50
+Epoch 5 completed in 15.49 min | Avg Loss: 1.1626
+
+Epoch 6/50
+Epoch 6 completed in 15.55 min | Avg Loss: 1.0898
+
+Epoch 7/50
+Epoch 7 completed in 15.50 min | Avg Loss: 1.0286
+
+Epoch 8/50
+Epoch 8 completed in 15.14 min | Avg Loss: 0.9784
+
+Epoch 9/50
+Epoch 9 completed in 15.39 min | Avg Loss: 0.9326
+
+Epoch 10/50
+Epoch 10 completed in 15.46 min | Avg Loss: 0.8879
+
+Epoch 11/50
+Epoch 11 completed in 15.35 min | Avg Loss: 0.8507
+
+Epoch 12/50
+Epoch 12 completed in 15.18 min | Avg Loss: 0.8074
+
+Epoch 13/50
+Epoch 13 completed in 15.32 min | Avg Loss: 0.7629
+
+Epoch 14/50
+Epoch 14 completed in 15.25 min | Avg Loss: 0.7204
+
+Epoch 15/50
+Epoch 15 completed in 15.34 min | Avg Loss: 0.6846
+
+Epoch 16/50
+Epoch 16 completed in 15.45 min | Avg Loss: 0.6475
+
+Epoch 17/50
+Epoch 17 completed in 15.45 min | Avg Loss: 0.6082
+
+Epoch 18/50
+Epoch 18 completed in 15.50 min | Avg Loss: 0.5642
+
+Epoch 19/50
+Epoch 19 completed in 15.64 min | Avg Loss: 0.5301
+
+Epoch 20/50
+Epoch 20 completed in 16.53 min | Avg Loss: 0.4940
+
+Epoch 21/50
+Epoch 21 completed in 17.65 min | Avg Loss: 0.4674
+
+Epoch 22/50
+Epoch 22 completed in 14.82 min | Avg Loss: 0.4455
+
+Epoch 23/50
+Epoch 23 completed in 15.27 min | Avg Loss: 0.4161
+
+Epoch 24/50
+Epoch 24 completed in 14.36 min | Avg Loss: 0.3919
+
+Epoch 25/50
+Epoch 25 completed in 15.38 min | Avg Loss: 0.3764
+
+Epoch 26/50
+Epoch 26 completed in 15.33 min | Avg Loss: 0.3630
+
+Epoch 27/50
+Epoch 27 completed in 14.15 min | Avg Loss: 0.3444
+
+Epoch 28/50
+Epoch 28 completed in 12.79 min | Avg Loss: 0.3325
+
+Epoch 29/50
+Epoch 29 completed in 12.96 min | Avg Loss: 0.3137
+
+Epoch 30/50
+Epoch 30 completed in 12.98 min | Avg Loss: 0.3040
+
+Epoch 31/50
+Epoch 31 completed in 12.97 min | Avg Loss: 0.2946
+
+Epoch 32/50
+Epoch 32 completed in 13.13 min | Avg Loss: 0.2825
+
+Epoch 33/50
+Epoch 33 completed in 13.06 min | Avg Loss: 0.2713
+
+Epoch 34/50
+Epoch 34 completed in 13.00 min | Avg Loss: 0.2618
+
+Epoch 35/50
+Epoch 35 completed in 12.83 min | Avg Loss: 0.2530
+
+Epoch 36/50
+Epoch 36 completed in 12.63 min | Avg Loss: 0.2455
+
+Epoch 37/50
+Epoch 37 completed in 12.64 min | Avg Loss: 0.2405
+
+Epoch 38/50
+Epoch 38 completed in 12.67 min | Avg Loss: 0.2307
+
+Epoch 39/50
+Epoch 39 completed in 12.64 min | Avg Loss: 0.2271
+
+Epoch 40/50
+Epoch 40 completed in 12.65 min | Avg Loss: 0.2173
+
+Epoch 41/50
+Epoch 41 completed in 12.87 min | Avg Loss: 0.2106
+
+Epoch 42/50
+Epoch 42 completed in 12.68 min | Avg Loss: 0.2076
+
+Epoch 43/50
+Epoch 43 completed in 12.44 min | Avg Loss: 0.2010
+
+Epoch 44/50
+Epoch 44 completed in 10.95 min | Avg Loss: 0.1973
+
+Epoch 45/50
+Epoch 45 completed in 10.10 min | Avg Loss: 0.1924
+
+Epoch 46/50
+Epoch 46 completed in 10.07 min | Avg Loss: 0.1903
+
+Epoch 47/50
+Epoch 47 completed in 10.09 min | Avg Loss: 0.1874
+
+Epoch 48/50
+Epoch 48 completed in 10.11 min | Avg Loss: 0.1841
+
+Epoch 49/50
+Epoch 49 completed in 10.04 min | Avg Loss: 0.1830
+
+Epoch 50/50
+Epoch 50 completed in 10.16 min | Avg Loss: 0.1806
+
+Total Training Time: 41552.72 seconds (692.55 minutes)
+Training U-Net++ ended...
+U-Net++ Total Loss:  [2.489966996791466, 1.8474752351904757, 1.4067687301344896, 1.2521569685798204, 1.1626220215381053, 1.0897808081648324, 1.0286087451164834, 0.9783610929264112, 0.9326361311572704, 0.8878894695118189, 0.850674817305698, 0.8073532257952621, 0.7628859997178349, 0.7203746302169934, 0.6845971520505786, 0.6474619257124814, 0.6082181811906744, 0.5642436655241261, 0.5301329700177593, 0.4940273704345115, 0.4674005370174518, 0.4454848545799286, 0.4161196080773447, 0.39193396724724655, 0.37637840663449146, 0.36302276759335167, 0.34442582561441637, 0.3325379245688789, 0.31373264897692454, 0.3040317598592795, 0.29456162419212, 0.2824731240255301, 0.27127625203630135, 0.26177901962404265, 0.2529889993835988, 0.2454775388129833, 0.24048588404590399, 0.23072069263860082, 0.22708599228728832, 0.2172674693968476, 0.21055519061811853, 0.20756817435663355, 0.20104706105604217, 0.19726894555514735, 0.19236357371363172, 0.19026824387080404, 0.18737351486569997, 0.18411701499076372, 0.18302057971684546, 0.18062889763717666]
+Validating U-Net++ started...
+
+Evaluating on validation set...
+Validation Pixel Accuracy: 0.7559
+Validation mIoU: 0.2368
+Validating U-Net++ ended...
+Model saved as unetplusplus_model_resnet101_run8.pth

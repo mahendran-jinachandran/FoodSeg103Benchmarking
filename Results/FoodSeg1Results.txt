@@ -1,0 +1,489 @@
+Images size:  (512, 384)
+12.8
+True
+NVIDIA A100 80GB PCIe
+DEVICE: cuda:1
+Images Shape:  torch.Size([8, 3, 512, 384])
+Labels Shape:  torch.Size([8, 512, 384])
+Unique Labels:  [ 0  3  5  8 25 37 44 46 47 48 52 54 58 66 70 73 76 80 82 87 88 89 94]
+------------------------------------------
+Training DeepLabV3 started...
+
+Epoch 1/50
+Train Loss: 2.5171
+
+Epoch 2/50
+Train Loss: 1.6252
+
+Epoch 3/50
+Train Loss: 1.3462
+
+Epoch 4/50
+Train Loss: 1.1700
+
+Epoch 5/50
+Train Loss: 1.0330
+
+Epoch 6/50
+Train Loss: 0.9250
+
+Epoch 7/50
+Train Loss: 0.8282
+
+Epoch 8/50
+Train Loss: 0.7342
+
+Epoch 9/50
+Train Loss: 0.6540
+
+Epoch 10/50
+Train Loss: 0.5902
+
+Epoch 11/50
+Train Loss: 0.5332
+
+Epoch 12/50
+Train Loss: 0.4790
+
+Epoch 13/50
+Train Loss: 0.4303
+
+Epoch 14/50
+Train Loss: 0.3838
+
+Epoch 15/50
+Train Loss: 0.3596
+
+Epoch 16/50
+Train Loss: 0.3278
+
+Epoch 17/50
+Train Loss: 0.2977
+
+Epoch 18/50
+Train Loss: 0.2792
+
+Epoch 19/50
+Train Loss: 0.2516
+
+Epoch 20/50
+Train Loss: 0.2319
+
+Epoch 21/50
+Train Loss: 0.2183
+
+Epoch 22/50
+Train Loss: 0.2012
+
+Epoch 23/50
+Train Loss: 0.1861
+
+Epoch 24/50
+Train Loss: 0.1839
+
+Epoch 25/50
+Train Loss: 0.1626
+
+Epoch 26/50
+Train Loss: 0.1524
+
+Epoch 27/50
+Train Loss: 0.1499
+
+Epoch 28/50
+Train Loss: 0.1360
+
+Epoch 29/50
+Train Loss: 0.1329
+
+Epoch 30/50
+Train Loss: 0.1248
+
+Epoch 31/50
+Train Loss: 0.1147
+
+Epoch 32/50
+Train Loss: 0.1094
+
+Epoch 33/50
+Train Loss: 0.1092
+
+Epoch 34/50
+Train Loss: 0.1024
+
+Epoch 35/50
+Train Loss: 0.0987
+
+Epoch 36/50
+Train Loss: 0.0930
+
+Epoch 37/50
+Train Loss: 0.0875
+
+Epoch 38/50
+Train Loss: 0.0845
+
+Epoch 39/50
+Train Loss: 0.0826
+
+Epoch 40/50
+Train Loss: 0.0805
+
+Epoch 41/50
+Train Loss: 0.0767
+
+Epoch 42/50
+Train Loss: 0.0744
+
+Epoch 43/50
+Train Loss: 0.0717
+
+Epoch 44/50
+Train Loss: 0.0696
+
+Epoch 45/50
+Train Loss: 0.0671
+
+Epoch 46/50
+Train Loss: 0.0654
+
+Epoch 47/50
+Train Loss: 0.0646
+
+Epoch 48/50
+Train Loss: 0.0625
+
+Epoch 49/50
+Train Loss: 0.0618
+
+Epoch 50/50
+Train Loss: 0.0605
+Training DeepLabV3 ended...
+DeepLabV3 Total Loss:  [2.5171317493551997, 1.6251596220997708, 1.3461994547905165, 1.1700286979085943, 1.0330044799402094, 0.9250321139014934, 0.8281605001150318, 0.7341703440557513, 0.6539881412137186, 0.5902474981106304, 0.5332133180878901, 0.47901203307542906, 0.43025087030607473, 0.3837535131609076, 0.35955164833876335, 0.32784910100612363, 0.2977309049874018, 0.2792248348697996, 0.2515935620254154, 0.2318898555411573, 0.21832743318180403, 0.20118985091893668, 0.1861183534811339, 0.18386421180412435, 0.16258251059495427, 0.152366077703802, 0.1499147234457645, 0.13604342554177173, 0.13290258009662406, 0.12483987387981307, 0.11467333952410455, 0.10942126445795139, 0.1091754918867187, 0.10235954876122084, 0.09870628252577629, 0.09297065826111965, 0.08750708780309745, 0.08447392952791377, 0.08262975934898872, 0.08050033530253277, 0.0766605550952459, 0.07443971469711338, 0.07167594494779458, 0.06961210602431006, 0.06714172011920001, 0.06542828160653527, 0.06464790023062049, 0.06250968757855375, 0.061771455871159536, 0.060515310812627905]
+Validating DeepLabV3 started...
+
+Evaluating on validation set...
+Validation Pixel Accuracy: 0.7784
+Validation mIoU: 0.2683
+Validating DeepLabV3 ended...
+Model saved as deeplabv3_resnet101_run1.pth
+------------------------------------------
+Training U-Net started...
+
+Epoch 1/50
+Train Loss: 3.0217
+
+Epoch 2/50
+Train Loss: 1.9543
+
+Epoch 3/50
+Train Loss: 1.7318
+
+Epoch 4/50
+Train Loss: 1.5753
+
+Epoch 5/50
+Train Loss: 1.4437
+
+Epoch 6/50
+Train Loss: 1.3311
+
+Epoch 7/50
+Train Loss: 1.2329
+
+Epoch 8/50
+Train Loss: 1.1557
+
+Epoch 9/50
+Train Loss: 1.0813
+
+Epoch 10/50
+Train Loss: 1.0089
+
+Epoch 11/50
+Train Loss: 0.9371
+
+Epoch 12/50
+Train Loss: 0.8812
+
+Epoch 13/50
+Train Loss: 0.8235
+
+Epoch 14/50
+Train Loss: 0.7682
+
+Epoch 15/50
+Train Loss: 0.7142
+
+Epoch 16/50
+Train Loss: 0.6637
+
+Epoch 17/50
+Train Loss: 0.6228
+
+Epoch 18/50
+Train Loss: 0.5820
+
+Epoch 19/50
+Train Loss: 0.5383
+
+Epoch 20/50
+Train Loss: 0.5040
+
+Epoch 21/50
+Train Loss: 0.4701
+
+Epoch 22/50
+Train Loss: 0.4458
+
+Epoch 23/50
+Train Loss: 0.4119
+
+Epoch 24/50
+Train Loss: 0.3904
+
+Epoch 25/50
+Train Loss: 0.3680
+
+Epoch 26/50
+Train Loss: 0.3469
+
+Epoch 27/50
+Train Loss: 0.3263
+
+Epoch 28/50
+Train Loss: 0.3131
+
+Epoch 29/50
+Train Loss: 0.2997
+
+Epoch 30/50
+Train Loss: 0.2867
+
+Epoch 31/50
+Train Loss: 0.2710
+
+Epoch 32/50
+Train Loss: 0.2582
+
+Epoch 33/50
+Train Loss: 0.2453
+
+Epoch 34/50
+Train Loss: 0.2381
+
+Epoch 35/50
+Train Loss: 0.2245
+
+Epoch 36/50
+Train Loss: 0.2174
+
+Epoch 37/50
+Train Loss: 0.2060
+
+Epoch 38/50
+Train Loss: 0.1982
+
+Epoch 39/50
+Train Loss: 0.1907
+
+Epoch 40/50
+Train Loss: 0.1850
+
+Epoch 41/50
+Train Loss: 0.1792
+
+Epoch 42/50
+Train Loss: 0.1726
+
+Epoch 43/50
+Train Loss: 0.1694
+
+Epoch 44/50
+Train Loss: 0.1609
+
+Epoch 45/50
+Train Loss: 0.1570
+
+Epoch 46/50
+Train Loss: 0.1532
+
+Epoch 47/50
+Train Loss: 0.1496
+
+Epoch 48/50
+Train Loss: 0.1476
+
+Epoch 49/50
+Train Loss: 0.1436
+
+Epoch 50/50
+Train Loss: 0.1415
+Training U-Net ended...
+U-Net Total Loss:  [3.0216792580786715, 1.954263058941016, 1.731805655967749, 1.5752870280708202, 1.4436780737644215, 1.331089714365633, 1.2329380311323015, 1.1556985967614677, 1.081328072383354, 1.0088500000691911, 0.9370671294474104, 0.881230291738556, 0.8234571041972832, 0.7681592744005243, 0.7141696512220759, 0.6636579004661994, 0.6227702821812698, 0.5820130076779599, 0.5383351420322926, 0.5040477520724935, 0.47007506557203604, 0.44582764536477204, 0.411851310304233, 0.39035878897335136, 0.36804331840280546, 0.34691062929590094, 0.3262849252067064, 0.3130823840801253, 0.29971206405859313, 0.2866510251958527, 0.27095706631723987, 0.25823921229492985, 0.24533293167813824, 0.2380580459489677, 0.22448500310389227, 0.2173799229113095, 0.20597985801832633, 0.19824668535451445, 0.19067149600955877, 0.1850477738087671, 0.17921282306767963, 0.1725883489328154, 0.1694122054771091, 0.16091961528430207, 0.15698485325178788, 0.15321672144517853, 0.14964308519137615, 0.14760741923919268, 0.14355720464815871, 0.14148268561636845]
+Validating U-Net started...
+
+Evaluating on validation set...
+Validation Pixel Accuracy: 0.7529
+Validation mIoU: 0.1632
+Validating U-Net ended...
+Model saved as unet_model_resnet101_run1.pth
+------------------------------------------
+Training SegFormer started...
+
+Epoch 1/50
+Epoch 1 Avg Loss: 1.7098
+
+Epoch 2/50
+Epoch 2 Avg Loss: 1.0876
+
+Epoch 3/50
+Epoch 3 Avg Loss: 0.8391
+
+Epoch 4/50
+Epoch 4 Avg Loss: 0.6741
+
+Epoch 5/50
+Epoch 5 Avg Loss: 0.5255
+
+Epoch 6/50
+Epoch 6 Avg Loss: 0.4157
+
+Epoch 7/50
+Epoch 7 Avg Loss: 0.3353
+
+Epoch 8/50
+Epoch 8 Avg Loss: 0.2785
+
+Epoch 9/50
+Epoch 9 Avg Loss: 0.2272
+
+Epoch 10/50
+Epoch 10 Avg Loss: 0.1976
+
+Epoch 11/50
+Epoch 11 Avg Loss: 0.1795
+
+Epoch 12/50
+Epoch 12 Avg Loss: 0.1865
+
+Epoch 13/50
+Epoch 13 Avg Loss: 0.1605
+
+Epoch 14/50
+Epoch 14 Avg Loss: 0.1482
+
+Epoch 15/50
+Epoch 15 Avg Loss: 0.1309
+
+Epoch 16/50
+Epoch 16 Avg Loss: 0.1215
+
+Epoch 17/50
+Epoch 17 Avg Loss: 0.1289
+
+Epoch 18/50
+Epoch 18 Avg Loss: 0.1241
+
+Epoch 19/50
+Epoch 19 Avg Loss: 0.1101
+
+Epoch 20/50
+Epoch 20 Avg Loss: 0.1005
+
+Epoch 21/50
+Epoch 21 Avg Loss: 0.0980
+
+Epoch 22/50
+Epoch 22 Avg Loss: 0.0983
+
+Epoch 23/50
+Epoch 23 Avg Loss: 0.0959
+
+Epoch 24/50
+Epoch 24 Avg Loss: 0.0905
+
+Epoch 25/50
+Epoch 25 Avg Loss: 0.0855
+
+Epoch 26/50
+Epoch 26 Avg Loss: 0.0831
+
+Epoch 27/50
+Epoch 27 Avg Loss: 0.0813
+
+Epoch 28/50
+Epoch 28 Avg Loss: 0.0821
+
+Epoch 29/50
+Epoch 29 Avg Loss: 0.0759
+
+Epoch 30/50
+Epoch 30 Avg Loss: 0.0741
+
+Epoch 31/50
+Epoch 31 Avg Loss: 0.0712
+
+Epoch 32/50
+Epoch 32 Avg Loss: 0.0685
+
+Epoch 33/50
+Epoch 33 Avg Loss: 0.0675
+
+Epoch 34/50
+Epoch 34 Avg Loss: 0.0663
+
+Epoch 35/50
+Epoch 35 Avg Loss: 0.0641
+
+Epoch 36/50
+Epoch 36 Avg Loss: 0.0621
+
+Epoch 37/50
+Epoch 37 Avg Loss: 0.0607
+
+Epoch 38/50
+Epoch 38 Avg Loss: 0.0595
+
+Epoch 39/50
+Epoch 39 Avg Loss: 0.0581
+
+Epoch 40/50
+Epoch 40 Avg Loss: 0.0568
+
+Epoch 41/50
+Epoch 41 Avg Loss: 0.0555
+
+Epoch 42/50
+Epoch 42 Avg Loss: 0.0539
+
+Epoch 43/50
+Epoch 43 Avg Loss: 0.0529
+
+Epoch 44/50
+Epoch 44 Avg Loss: 0.0518
+
+Epoch 45/50
+Epoch 45 Avg Loss: 0.0509
+
+Epoch 46/50
+Epoch 46 Avg Loss: 0.0501
+
+Epoch 47/50
+Epoch 47 Avg Loss: 0.0491
+
+Epoch 48/50
+Epoch 48 Avg Loss: 0.0485
+
+Epoch 49/50
+Epoch 49 Avg Loss: 0.0479
+
+Epoch 50/50
+Epoch 50 Avg Loss: 0.0473
+Training SegFormer ended...
+SegFormer Total Loss:  [1.7098092932379647, 1.0875854655310966, 0.8391132055278, 0.6741076045778743, 0.5255376420329126, 0.4157025151277622, 0.3353408215325296, 0.278477572371068, 0.2272117000258562, 0.19763689771605533, 0.17952653467894367, 0.18645048725686333, 0.16045223276936607, 0.14824650650709437, 0.13086581466955702, 0.12148751891898306, 0.12890163610538358, 0.12407545991134299, 0.11006810737364174, 0.10049299512471088, 0.0979501028839696, 0.0982649920636827, 0.09586823021284459, 0.09053561904050565, 0.08550818492307134, 0.0830997737845104, 0.08127772836179067, 0.08207287705753052, 0.07588113599231117, 0.07414751596162829, 0.07124092553654031, 0.06847239572130275, 0.06753235074121917, 0.0662991673555554, 0.06409797041615647, 0.062082731172466356, 0.06074964046406516, 0.05945478096592388, 0.05809744293794012, 0.05680558099792628, 0.05550237956126467, 0.053939621004591404, 0.05289025164327403, 0.051777013205290795, 0.050874515617472596, 0.05009976000096021, 0.04914207035080675, 0.048526264990218, 0.04785928603734098, 0.04733765121686899]
+Validating SegFormer started...
+Validation Pixel Accuracy: 0.7774
+Validation mIoU: 0.2882
+Validating SegFormer ended...
+Model saved as segformer_model_b5_run1.pth
