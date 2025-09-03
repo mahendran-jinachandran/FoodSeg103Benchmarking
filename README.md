@@ -53,3 +53,7 @@ All models were adapted using PyTorch and [Segmentation Models PyTorch (SMP)](ht
 | 8   | 77.73                | 75.21              | **79.18**              | 35.51            | 22.71          | **41.14**           |
 | 9   | 77.47                | 74.89              | **78.70**              | 34.48            | 23.73          | **40.39**           |
 | 10  | -                    | **75.59**          | -                      | -                | 23.68          | -                   |
+
+
+
+Models were stored in Gooogle Drive Link: [Trained Models](https://drive.google.com/drive/folders/1FEJh-FvCCPxhOzNgADHODLFygg1RmBwD?usp=sharing) 
